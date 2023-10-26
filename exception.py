@@ -10,9 +10,10 @@ def get_user_exception():
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"}
-     )
+    )
 
     return credentials_exception
+
 
 def token_exception():
     token_exception_response = HTTPException(

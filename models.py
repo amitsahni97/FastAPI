@@ -12,7 +12,8 @@ class Users(Base):
     email = Column(String)
     password = Column(String)
     is_active = Column(Boolean, default=False)
-    todos = relationship("Todos", back_populates="owner")
+    todos = relationship("Todos")
+    phone_num = Column(String)
 
 
 class Todos(Base):
@@ -23,6 +24,4 @@ class Todos(Base):
     priority = Column(Integer)
     complete = Column(Boolean, default=False)
     owner_id = Column(Integer, ForeignKey('users.id'))
-    owner = relationship("Users", back_populates="todos")
-
-    
+    # owner = relationship("Users", back_populates="todos")

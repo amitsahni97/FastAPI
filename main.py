@@ -6,6 +6,8 @@ from starlette.staticfiles import StaticFiles
 # from company import companyapis, dependencies
 
 app = FastAPI()
+
+# This will create the database to appropriate location given in SQLALCHEMY_DATABASE_URL
 models.Base.metadata.create_all(bind=engine)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")

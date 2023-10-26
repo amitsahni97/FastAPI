@@ -7,12 +7,12 @@ class TodoRequestSchema(BaseModel):
     title: str
     description: str
     priority: int
-    complete: bool
+    complete: Optional[bool] = False
 
 
 class UsersDetailsSchema(BaseModel):
     user_name: str
     first_name: str
     last_name: str
-    email:str
+    email: str
     password: str
